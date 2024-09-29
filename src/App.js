@@ -9,7 +9,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/users', {
+      const response = await axios.post(process.env.REACT_BACKEND_URL, {
         name,
         addressLine,
       });
