@@ -6,10 +6,15 @@ function App() {
   const [name, setName] = useState('');
   const [addressLine, setAddressLine] = useState('');
 
+  const REACT_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+  console.log(REACT_BACKEND_URL )
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(name)
+    console.log(addressLine)
     try {
-      const response = await axios.post(process.env.REACT_BACKEND_URL, {
+      const response = await axios.post(REACT_BACKEND_URL, {
         name,
         addressLine,
       });
